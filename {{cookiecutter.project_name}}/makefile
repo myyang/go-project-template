@@ -1,6 +1,6 @@
 
 CC=go
-PROJ={{projectName}}
+PROJ={{cookiecutter.project_name}}
 DEBUGFLAGS=-c -gcflags "-N -l"
 
 build:
