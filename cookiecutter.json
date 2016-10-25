@@ -1,3 +1,5 @@
 {
-    "project_name": "go-project-name"
+    "project_name": "go-project-name",
+    "author_name": "your_name",
+    "author_email": "your@email.com"
 }
