@@ -1,22 +1,14 @@
-
-CC=go
-PROJ={{cookiecutter.project_name}}
-DEBUGFLAGS=-c -gcflags "-N -l"
+.PHONY: build debug test bench benchalloc coverage
 
 build:
-	$(CC) build -o $(PROJ).out .
-
+	./cmd.sh build
 debug:
-	$(CC) test $(DEBUGFLAGS)
-
+	./cmd.sh debug
 test:
-	make debug && ./$(PROJ).test -test.v
-
+	./cmd.sh test
 bench:
-	make debug && ./$(PROJ).test -test.bench .
-
+	./cmd.sh bench
 benchalloc:
-	make debug && GODEBUG=allocfreetrace=1 ./$(PROJ).test -test.run=None -test.bench . 2>trace.log
-
+	./cmd.sh benchalloc
 coverage:
-	go test -coverprofile cover.out && go tool cover -html cover.out
+	./cmd.sh coverage
