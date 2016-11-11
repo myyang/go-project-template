@@ -27,3 +27,6 @@ _testmain.go
 # add log or pure text
 *.log
 *.txt
+
+# external packages folder
+vendor/
